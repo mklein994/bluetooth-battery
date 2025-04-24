@@ -152,7 +152,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         );
 
         if opt.i3 {
-            if devices.len() > 1 && i == devices.len() - 2 {
+            if i < devices.len() - 1 {
                 print!(" ");
             }
 
