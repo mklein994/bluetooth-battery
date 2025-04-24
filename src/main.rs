@@ -21,9 +21,9 @@ POSITIONAL ARGUMENTS:
 FORMAT OPTIONS:
   -3, --i3       Format for i3blocks using pango markup.
   --pango        An alias for --i3.
-  -f, --long     Use a long format (icon, name, percentage). This is the default.
+  -f, --long     Use a long format (icon, name, percentage).
   -s, --short    Use a short format (name, percentage).
-  -n, --narrow   Use a narrow format (icon, percentage).
+  -n, --narrow   Use a narrow format (icon, percentage). This is the default.
 
 OTHER OPTIONS:
   -h, --usage    Print a short usage message.
@@ -264,8 +264,8 @@ impl Icon {
 
 #[derive(Default)]
 enum DeviceFormat {
-    #[default]
     Long,
     Short,
+    #[default]
     Narrow,
 }
