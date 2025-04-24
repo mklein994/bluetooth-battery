@@ -86,7 +86,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let conn = Connection::new_system()?;
     let timeout = Duration::from_secs(5);
 
-    let devices = if opt.addresses.is_empty() {
+    let mut devices = if opt.addresses.is_empty() {
         let proxy = conn.with_proxy("org.bluez", "/", timeout);
 
         let objects = proxy.get_managed_objects()?;
@@ -141,6 +141,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         device_list
     };
 
+    devices.sort_unstable();
+
     for (i, device) in devices.iter().enumerate() {
         print!(
             "{}",
@@ -167,7 +169,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
 struct Device {
     name: String,
     icon: Icon,
@@ -207,7 +209,7 @@ impl Device {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
 struct Icon(String);
 
 impl std::str::FromStr for Icon {
