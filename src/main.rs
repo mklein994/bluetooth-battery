@@ -241,7 +241,7 @@ impl Icon {
         macro_rules! i3 {
             ($x:literal) => {
                 concat!(
-                    "<span font_desc='Material Symbols Outlined @opsz=20,FILL=1,GRAD=-25' rise='-2pt'>",
+                    "<span font_desc='Material Symbols Outlined @opsz=20,FILL=1,GRAD=-25' rise='-3pt'>",
                     $x,
                     "</span> "
                 )
