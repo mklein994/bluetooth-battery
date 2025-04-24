@@ -224,8 +224,8 @@ impl Icon {
         match self.0.as_str() {
             "audio-headset" => Some("🎧 "),
             "phone" | "pda" => Some("📱 "),
-            "input-keyboard" => Some("⌨️  "),
-            "input-mouse" => Some("🖱️  "),
+            "input-keyboard" => Some("⌨️ "),
+            "input-mouse" => Some("🖱️ "),
             "input-gaming" => Some("🎮 "),
             "input-tablet" => Some("🖍️  "),
             "multimedia-player" => Some("📻 "),
