@@ -153,15 +153,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         );
 
-        if opt.i3 {
-            if i < devices.len() - 1 {
+        if i < devices.len() - 1 {
+            if let DeviceFormat::Short = opt.fmt {
+                print!("  ");
+            } else {
                 print!(" ");
             }
+        }
 
-            if i == devices.len() - 1 {
-                println!();
-            }
-        } else {
+        if i == devices.len() - 1 {
             println!();
         }
     }
