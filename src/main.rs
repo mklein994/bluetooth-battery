@@ -6,7 +6,7 @@ use dbus::blocking::stdintf::org_freedesktop_dbus::{ObjectManager, Properties};
 const USAGE_MESSAGE: &str = concat!(
     "Usage: ",
     env!("CARGO_BIN_NAME"),
-    " [-3hflnsV] [--help | --i3 | --long | --narrow | --pango | --short | --usage | --version] [DEVICE]..."
+    " [-3hlnsV] [--help | --i3 | --long | --narrow | --pango | --short | --usage | --version] [DEVICE]..."
 );
 
 const HELP_MESSAGE_FRAGMENT: &str = "Show the battery life of connected bluetooth devices.
